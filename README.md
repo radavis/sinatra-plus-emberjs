@@ -101,3 +101,20 @@ Person.create({
 ```
 $ ember install active-model-adapter
 ```
+
+## Running the app
+
+```
+$ cd backend
+$ rackup
+```
+
+```
+$ cd frontend
+$ ember serve
+```
+
+
+## Capybara
+
+Currently stuck on how to run feature tests. Perhaps [this](https://blog.codeship.com/how-to-write-smoke-tests-for-an-ember-rails-stack/) will help.

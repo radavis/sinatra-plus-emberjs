@@ -2,6 +2,9 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'connect-src': "'self' localhost:9292"
+    },
     modulePrefix: 'super-rentals',
     environment: environment,
     baseURL: '/',
