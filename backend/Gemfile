@@ -1,9 +1,11 @@
 source "https://rubygems.org/"
 
+gem "dotenv"
 gem "pg", "~> 0.18"
 gem "rake"
 gem "sinatra", "~> 1.4"
 gem "sinatra-activerecord", "~> 2.0"
+gem "sinatra-contrib"
 
 group :test do
   gem "capybara"

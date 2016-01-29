@@ -118,3 +118,7 @@ $ ember serve
 ## Capybara
 
 Currently stuck on how to run feature tests. Perhaps [this](https://blog.codeship.com/how-to-write-smoke-tests-for-an-ember-rails-stack/) will help.
+
+* [Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
+* [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/Security/CSP)
+* [ember-cli-csp](https://github.com/rwjblue/ember-cli-content-security-policy)
