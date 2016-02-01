@@ -1,7 +1,7 @@
-require "poltergeist"
+require "spec_helper"
 
-feature "view rentals" do
-  let(:rentals) { create_list(:rental, 3) }
+feature "view rentals", js: true do
+  let!(:rentals) { create_list(:rental, 3) }
 
   scenario "user sees rentals on the root path" do
     visit "/"
