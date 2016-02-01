@@ -124,3 +124,16 @@ Currently stuck on how to run feature tests. Perhaps [this](https://blog.codeshi
 * [ember-cli-csp](https://github.com/rwjblue/ember-cli-content-security-policy)
 
 I don't think the two server strategy is going to work, here. We need the Sinatra app to serve the Ember code.
+
+## Capybara
+
+We need to build the front-end assets and place them in the `backend/public` folder. Sinatra then needs to load `index.html` at the root of the application.
+
+```
+$ cd frontend
+$ ember build --output-path ../backend/public
+$ cd ../backend
+$ rake spec
+```
+
+* To Do: Create a Rakefile in the root of the project that does this for you.
