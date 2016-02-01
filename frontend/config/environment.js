@@ -25,18 +25,12 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.contentSecurityPolicy = {
-      'connect-src': ["'self'", "http://localhost:9292"]
-    }
   }
 
   if (environment === 'test') {
     // Testem prefers this...
     ENV.baseURL = '/';
     ENV.locationType = 'none';
-    ENV.contentSecurityPolicy = {
-      'connect-src': ["'self'", "http://localhost:9292"]
-    }
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
