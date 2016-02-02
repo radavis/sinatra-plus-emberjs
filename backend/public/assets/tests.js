@@ -4,7 +4,7 @@ define('super-rentals/tests/adapters/rental.jshint', ['exports'], function (expo
   QUnit.module('JSHint - adapters');
   QUnit.test('adapters/rental.js should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'adapters/rental.js should pass jshint.\nadapters/rental.js: line 1, col 28, Missing semicolon.\nadapters/rental.js: line 4, col 3, Missing semicolon.\n\n2 errors');
+    assert.ok(true, 'adapters/rental.js should pass jshint.');
   });
 });
 define('super-rentals/tests/app.jshint', ['exports'], function (exports) {

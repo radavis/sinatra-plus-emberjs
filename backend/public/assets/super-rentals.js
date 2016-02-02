@@ -108,7 +108,7 @@ define('super-rentals/models/rental', ['exports', 'ember-data'], function (expor
     title: _emberData['default'].attr('string'),
     owner: _emberData['default'].attr('string'),
     city: _emberData['default'].attr('string'),
-    type: _emberData['default'].attr('string'),
+    category: _emberData['default'].attr('string'),
     bedrooms: _emberData['default'].attr('number'),
     image: _emberData['default'].attr('string')
   });
@@ -434,7 +434,7 @@ define("super-rentals/templates/components/rental-listing", ["exports"], functio
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
         var el1 = dom.createElement("p");
-        var el2 = dom.createTextNode("Type: ");
+        var el2 = dom.createTextNode("Category: ");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
@@ -472,7 +472,7 @@ define("super-rentals/templates/components/rental-listing", ["exports"], functio
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["content", "rental.title", ["loc", [null, [1, 4], [1, 20]]]], ["content", "rental.owner", ["loc", [null, [2, 10], [2, 26]]]], ["content", "rental.type", ["loc", [null, [3, 9], [3, 24]]]], ["content", "rental.city", ["loc", [null, [4, 13], [4, 28]]]], ["content", "rental.bedrooms", ["loc", [null, [5, 23], [5, 42]]]], ["block", "if", [["get", "isImageShowing", ["loc", [null, [6, 6], [6, 20]]]]], [], 0, 1, ["loc", [null, [6, 0], [11, 7]]]]],
+      statements: [["content", "rental.title", ["loc", [null, [1, 4], [1, 20]]]], ["content", "rental.owner", ["loc", [null, [2, 10], [2, 26]]]], ["content", "rental.category", ["loc", [null, [3, 13], [3, 32]]]], ["content", "rental.city", ["loc", [null, [4, 13], [4, 28]]]], ["content", "rental.bedrooms", ["loc", [null, [5, 23], [5, 42]]]], ["block", "if", [["get", "isImageShowing", ["loc", [null, [6, 6], [6, 20]]]]], [], 0, 1, ["loc", [null, [6, 0], [11, 7]]]]],
       locals: [],
       templates: [child0, child1]
     };
@@ -804,7 +804,7 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("super-rentals/app")["default"].create({"name":"super-rentals","version":"0.0.0+dcf0b53c"});
+  require("super-rentals/app")["default"].create({"name":"super-rentals","version":"0.0.0+30ed1631"});
 }
 
 /* jshint ignore:end */
