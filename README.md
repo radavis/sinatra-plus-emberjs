@@ -1,25 +1,30 @@
 ## Sinatra Plus Ember
 
-Notes from [guides.emberjs.com](https://guides.emberjs.com/v2.2.0/)
-
-## Getting Started
+### Getting Started
 
 #### Install Node and Watchman
 
-**Note:** Eventually I ran into some trouble with Homebrew and Node, so I used the [Node installer](https://nodejs.org/en/).
+Install Node via the [Node installer](https://nodejs.org/en/).
 
 ```
-$ brew install node watchman
+$ brew update
+$ brew install watchman
 ```
 
 #### Install Ember CLI
 
+List released versions of the `ember-cli` package.
+
 ```
-$ npm install -g ember-cli
-$ ember -v
+$ npm view ember-cli versions
 ```
 
-Latest version of Ember is v2.3.0
+Install the latest version.
+
+```
+$ npm install -g ember-cli@2.3.0-beta.1
+$ ember -v
+```
 
 #### Create a New Ember App
 
