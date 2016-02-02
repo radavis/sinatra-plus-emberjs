@@ -40,7 +40,8 @@ $ tree -L 1
 
 ```
 $ mkdir project-name
-$ ember new backend
+$ cd project-name
+$ ember new frontend
 ```
 
 #### Start the Server
