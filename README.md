@@ -28,16 +28,19 @@ $ ember -v
 
 #### Create a New Ember App
 
-```
-$ ember new app-name
-```
-
-In `bower.json`, set your version of `ember` to "~2.2.0", "ember-cli-shims": "0.1.0", and `ember-data` to "^2.3.0".
-
-[source](http://emberjs.com/blog/2016/01/12/ember-data-2-3-released.html#toc_changes-in-ember-data-2-3)
+We want the directory structure of our app to look like this:
 
 ```
-$ npm install -g bower
+$ tree -L 1
+.
+├── README.md
+├── backend   - Sinatra App
+└── frontend  - Ember App
+```
+
+```
+$ mkdir project-name
+$ ember new backend
 ```
 
 #### Start the Server
@@ -50,7 +53,7 @@ Navigate to [localhost:4200](http://localhost:4200/)
 
 ## Core Concepts
 
-The diagram [here](https://guides.emberjs.com/v2.2.0/getting-started/core-concepts/) is clutch.
+The diagram [here](https://guides.emberjs.com/v2.3.0/getting-started/core-concepts/) is clutch.
 
 * URL: http://localhost:4200/books
 * The Router maps the URL to a Route Handler
@@ -101,10 +104,18 @@ Person.create({
 });
 ```
 
-## ActiveModel Adapter
+## Adapters
 
-```
-$ ember install active-model-adapter
+[Adapters](https://guides.emberjs.com/v2.3.0/models/customizing-adapters/) are used for connecting Ember Models to APIs.
+
+```js
+// app/adapters/modelName.js
+
+import DS from 'ember-data'
+
+export default DS.RESTAdapter.extend({
+  namespace: 'api'
+})
 ```
 
 ## Running the app
@@ -119,10 +130,9 @@ $ cd frontend
 $ ember serve
 ```
 
+## Capybara Issue
 
-## Capybara Fail
-
-Currently stuck on how to run feature tests. Perhaps [this](https://blog.codeship.com/how-to-write-smoke-tests-for-an-ember-rails-stack/) will help.
+Stuck on how to run feature tests. Perhaps [this](https://blog.codeship.com/how-to-write-smoke-tests-for-an-ember-rails-stack/) will help.
 
 * [Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
 * [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/Security/CSP)
@@ -130,7 +140,7 @@ Currently stuck on how to run feature tests. Perhaps [this](https://blog.codeshi
 
 I don't think the two server strategy is going to work, here. We need the Sinatra app to serve the Ember code.
 
-## Capybara
+## Resolving Capybara Issue
 
 We need to build the front-end assets and place them in the `backend/public` folder. Sinatra then needs to load `index.html` at the root of the application.
 
@@ -141,4 +151,6 @@ $ cd ../backend
 $ rake spec
 ```
 
-* To Do: Create a Rakefile in the root of the project that does this for you.
+* To Do: Create a Rakefile that does the following:
+  - boots the development app
+  - runs the test suite
