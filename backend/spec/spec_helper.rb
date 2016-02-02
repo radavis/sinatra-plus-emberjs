@@ -17,4 +17,8 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.order = :random
   Kernel.srand config.seed
+
+  config.before(:suite) do
+    system("cd ../frontend && ember build --output-path ../backend/public")
+  end
 end
