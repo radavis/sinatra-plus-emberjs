@@ -4,7 +4,7 @@ class CreateRentals < ActiveRecord::Migration
       t.string :title, null: false
       t.string :owner
       t.string :city, null: false
-      t.string :type
+      t.string :category
       t.integer :bedrooms, null: false
       t.text :image
       t.timestamps null: false

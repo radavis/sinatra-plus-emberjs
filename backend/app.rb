@@ -13,11 +13,13 @@ class App < Sinatra::Base
   register Sinatra::Namespace
 
   get '/' do
-    File.new('public/index.html').readlines
+    index = File.join(settings.public_folder, 'index.html')
+    send_file(index)
   end
 
   namespace "/api" do
     before do
+      # only necessary for development?
       headers 'Access-Control-Allow-Origin' => ENV["EMBER_APP_URL"]
     end
 

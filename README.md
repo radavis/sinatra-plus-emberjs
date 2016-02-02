@@ -44,10 +44,11 @@ $ cd project-name
 $ ember new frontend
 ```
 
-#### Start the Server
+#### Start-up the Development App
 
 ```
-$ ember serve --proxy http://localhost:9292
+$ cd ../backend && rackup
+$ cd ../frontend && ember serve --proxy http://localhost:9292
 ```
 
 Navigate to [localhost:4200](http://localhost:4200/)
@@ -62,16 +63,6 @@ The diagram [here](https://guides.emberjs.com/v2.3.0/getting-started/core-concep
 * The Model persists to the Web Server
 * The Template (HTML + Handlebars) loads Components and accesses the Model data.
 * Components control how the UI behaves (Template + JS)
-
-## Serving (Fake) Data
-
-```
-$ ember install ember-cli-mirage
-```
-
-(uninstall `npm uninstall ember-cli-mirage --save`)
-
-Add code to `app/mirage`
 
 ## Classes in Ember
 
@@ -110,38 +101,15 @@ Person.create({
 [Adapters](https://guides.emberjs.com/v2.3.0/models/customizing-adapters/) are used for connecting Ember Models to APIs.
 
 ```js
-// app/adapters/modelName.js
-
+// app/adapters/model.js;
 import DS from 'ember-data'
 
 export default DS.RESTAdapter.extend({
   namespace: 'api'
-})
+});
 ```
 
-## Running the app
-
-```
-$ cd backend
-$ rackup
-```
-
-```
-$ cd frontend
-$ ember serve
-```
-
-## Capybara Issue
-
-Stuck on how to run feature tests. Perhaps [this](https://blog.codeship.com/how-to-write-smoke-tests-for-an-ember-rails-stack/) will help.
-
-* [Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
-* [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/Security/CSP)
-* [ember-cli-csp](https://github.com/rwjblue/ember-cli-content-security-policy)
-
-I don't think the two server strategy is going to work, here. We need the Sinatra app to serve the Ember code.
-
-## Resolving Capybara Issue
+## Feature Testing w/ Capybara
 
 We need to build the front-end assets and place them in the `backend/public` folder. Sinatra then needs to load `index.html` at the root of the application.
 

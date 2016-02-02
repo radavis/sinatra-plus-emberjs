@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20160128201620) do
     t.string   "title",      null: false
     t.string   "owner"
     t.string   "city",       null: false
-    t.string   "type"
+    t.string   "category"
     t.integer  "bedrooms",   null: false
     t.text     "image"
     t.datetime "created_at", null: false
